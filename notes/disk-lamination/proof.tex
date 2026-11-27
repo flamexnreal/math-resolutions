@@ -26,26 +26,34 @@ Let \(T\) be any triangulation of an unpunctured marked disk, \(L\) a single lam
 
 The coefficient inequality is Conjecture 1 as stated in the authors' November 19 revision [1, v4, \S5.1]. The preceding version allowed more general surfaces. Tang's counterexamples use an annulus [2], as do the related calculations of Til\`epe [3]. A focused search by the conjecture's authors, statement, and surface found no previous resolution of the revised conjecture.
 
-\section*{1. The exchange across one triangle}
-Realize the marked disk as a convex polygon. An allowed single curve joins two different open boundary edges. Its endpoints divide the boundary vertices into two consecutive sets. Color the set containing the starting vertex \(s\) of \(\gamma\) red and the other set blue. A chord crosses \(L\) in minimal position exactly when its endpoints have different colors.
+\section*{1. Curves and flips in the disk}
+\textbf{Normal form.} Realize the marked disk as a convex \(n\)-gon with no three vertices collinear. By [1, Definition 10], a closed curve is excluded since it bounds an unpunctured disk. The remaining possibility is a simple arc between open boundary edges. For given endpoints, every such arc cuts the disk into two disks, paired with the two boundary intervals between the endpoints. It is isotopic relative to the boundary to the straight chord between the endpoints when these lie on distinct edges. Indeed, a boundary correspondence taking the arc to that chord and fixing the polygon boundary extends over the two disks by the disk form of the Jordan--Sch\"onflies theorem. The extensions glue to a homeomorphism fixed on the boundary, which is isotopic to the identity by Alexander's trick. The same argument using a short interior arc near the boundary applies if the endpoints are on the same edge. Endpoints can also slide within their open boundary edges without crossing a mark.
+
+Endpoints on the same or adjacent edges cut off a boundary interval containing at most one marked vertex and hence are excluded. Conversely, nonadjacent edges have at least two vertices on each boundary interval and determine exactly one allowed class. In cyclic labels modulo \(n\), the unordered edges \((a,a+1),(b,b+1)\) are nonadjacent precisely when \(ab\) is an internal diagonal. This is the indexing of laminations in the finite check. Moving both endpoints of \(ab\) slightly in the same boundary direction gives the representative on those two edges, as in the elementary-lamination construction [4, \S17].
+
+Represent the target arc and the triangulation by straight chords as well. The same disk argument applies to arcs with fixed marked endpoints, and nonalternating pairs can be drawn simultaneously by noncrossing chords. Choose the endpoints of the straight representative of \(L\) generically on their open edges. They split the boundary vertices into two consecutive blocks. Color the block containing the starting vertex \(s\) of \(\gamma\) red and the other blue. A diagonal meets \(L\) exactly when its ends have different colors: alternating endpoints force an intersection by separation, and the straight segments then intersect just once. For a polygon side of differing colors, \(L\) ends on that side.
+
+\textbf{Crossing order.} Write \(t\) for the other end of \(\gamma\). An initial side has specialized value \(1\), so suppose \(st\) is an internal diagonal absent from \(T\). Its open straight segment passes through a sequence of initial triangles in order. Each triangle is convex, so its intersection with the segment is an interval and it cannot be revisited. No third vertex lies on \(st\). The first triangle has corner \(s\), and the segment leaves it across its opposite side \(uv\). Beyond \(uv\) is the subpolygon cut off from \(s\) by \(uv\), containing \(t\) and still carrying its initial triangulation.
+
+Inductively the near triangle is \(suv\) and the triangulation beyond \(uv\) is untouched. Let \(uwv\) be its triangle incident to \(uv\). The two triangles form a convex quadrilateral. Flipping \(uv\) creates \(sw\) and triangles \(suw,swv\). If \(w=t\), the desired arc has appeared. Otherwise the target leaves \(uwv\) across one of \(uw,wv\). Beyond that side is a strictly smaller subpolygon whose interior was disjoint from the flipped quadrilateral, so its initial triangulation is still intact. The new near triangle is \(suw\) or \(swv\), as required. This proves the induction in actual crossing order and exhausts the finite list of initial triangles. In particular the three sides \(uv,uw,wv\) all still have value \(1\) at this flip; only the values on \(su,sv\) need be carried.
+
+\section*{2. Exchange and the color run}
 
 In a quadrilateral flip, the product of the two diagonal variables is the sum of the products on opposite pairs of sides, with coefficients from the shear of \(L\). If the colors split two and two, multiply the product on the two \emph{monochromatic} sides by \(q\). In every other case both coefficients are \(1\).
 
 Here is the sign check using [1, Definitions 2, 9, 11--12 and Figure 3]. Write \(a,b,c,d\) clockwise and flip \(ac\). The positive side pair in the column for \(ac\) is \(bc,da\): each immediately precedes \(ac\) in its clockwise triangle. The negative pair is \(ab,cd\). A curve crossing \(ab,cd\) has shear \(+1\), so \(q\) multiplies \(bc,da\). A curve crossing \(bc,da\) has shear \(-1\), so \(q\) multiplies \(ab,cd\). These are precisely the two possible two-and-two splits. Crossings between adjacent sides and absence of a crossing give zero shear. Boundary sides have value \(1\). Compatibility of shear coordinates with flips permits this calculation in the current triangulation [1, \S2.3], [4].
 
-Follow \(\gamma\) from \(s\), flipping the initial diagonals it crosses in order. At each step \(uv\) is the next such diagonal and \(w\) the third vertex of the triangle beyond it. Flipping \(uv\) creates \(sw\). Indeed, the triangle on the near side is now \(suv\), initially by the choice of starting triangle and thereafter by the preceding flip. The far triangle \(uwv\) is an untouched initial triangle. Thus \(uv,uw,wv\) all have value \(1\) when used, and only the two values on \(su,sv\) need to be carried forward.
-
-\newpage
-\section*{2. The proof for arbitrary polygon size}
+For this local shear computation the intersection of the lamination chord with the closed quadrilateral is connected by convexity. Its two ends on the quadrilateral sides (including possible endpoints of \(L\) on polygon sides) therefore give a single passage. In cyclic order a two-and-two split has two adjacent vertices of each color, so the passage joins the opposite sides at the two color changes. A three-and-one split gives adjacent sides, and four identical colors give no passage. This accounts for every local contribution with its multiplicity.
 Call \(uv\) the current edge. Its endpoints bound an interval of boundary vertices on the side away from \(s\). If \(w\) is not the target vertex, the next interval is one of \([u,w]\) and \([w,v]\). In the boundary order cut at \(s\), the blue vertices form a single block. There is consequently at most one run of current edges with differently colored endpoints: once such an interval is reached it has two color blocks, and shrinking it to an interval with equal-colored endpoints leaves only one color inside. Before the run, each new value is an ordinary sum. In fact, two red endpoints leave at most one blue among \(s,u,w,v\), and two blue endpoints force \(w\) blue. Both carried values start at \(1\).
 
-During the run let \(A\) denote the value from \(s\) to the red endpoint and \(B\) the value to the blue endpoint. The rule on page 1 gives
+If the first crossed edge is already mixed, both values there are \(1\). Otherwise all updates before the first mixed edge are ordinary sums of positive integers. During the run let \(A\) denote the value from \(s\) to the red endpoint and \(B\) the value to the blue endpoint. The exchange rule gives
 \[
            c_{sw}(q)=
            \begin{cases} A+B & w\text{ red},\\ qA+B & w\text{ blue}.\end{cases}                 \tag{1}
 \]
 In the second line the two monochromatic sides are the side carrying \(A\) and the initial side from \(w\) to the blue endpoint. While the endpoints stay mixed, (1) replaces \(A\) or \(B\), respectively. If the run ends by dropping the endpoint of the opposite color, the pair left is either \(A,A+B\) or \(B,B+qA\). Each later update is an ordinary sum since the remaining interval is monochromatic. This description also covers a last flip producing the target directly.
 
+\section*{3. Nonvanishing and log-concavity}
 Fix \(z\) in the open upper half-plane, put \(\theta=\arg z\in(0,\pi)\), and evaluate the polynomials at \(q=z\). Write
 \[
                    K=\{r\ne0:0\le\arg r\le\theta\}.
@@ -60,11 +68,11 @@ At a red exit the ratio of the two surviving values is \((A+B)/A=1+r\in K\). At 
 Thus \(\cc\) has no zero in the upper half-plane. Its coefficients are real, so conjugation excludes zeros in the lower half-plane. The addition rules give nonnegative integer coefficients and strictly positive constant terms at every step, excluding all nonnegative real zeros. Finally, Newton's inequalities give log-concavity of \(a_i/\binom{d}{i}\) for a degree-\(d\) polynomial with negative real roots. The binomial coefficients are log-concave as well, yielding the asserted inequality for \(a_i\). \hfill\(\square\)
 
 \newpage
-\section*{3. Independent exact checks}
+\section*{4. Independent exact checks}
 The accompanying Python program runs with SymPy 1.14 using \texttt{python verify.py}. It checks the algebra of the induction for arbitrary complex inputs and separately recomputes cluster polynomials from exchange matrices.
 
 \textbf{Polynomial certificate.}
-For \(y=\im z>0\), put \(F=\im(B\overline A)\) and \(G=\im(zA\overline B)\). For nonzero \(A,B\), the two inequalities \(F,G\ge0\) say exactly that \(B/A\) is in the sector on page 2. The program expands the following transformations in the six independent real coordinates of \(A,B,z\) over the integers.
+For \(y=\im z>0\), put \(F=\im(B\overline A)\) and \(G=\im(zA\overline B)\). For nonzero \(A,B\), the two inequalities \(F,G\ge0\) say exactly that \(B/A\) is in the sector of Section 3. The program expands the following transformations in the six independent real coordinates of \(A,B,z\) over the integers.
 \[
 \begin{array}{c|cc}
   \text{new pair} & F_{\rm new} & G_{\rm new}\\ \hline

@@ -12,6 +12,7 @@ The November 27, 2026 (UTC) run used revision [`9e5df53`](https://github.com/fla
 | Cazenave | Rational elimination gives two negative pivots for $21I-8A$ and none for $37I-8L$, with no zero pivots. Hence $\lambda_2(A)>21/8$ and $\mu_1(L)<37/8$. |
 | Sombor coindex | Both graphs pass the 2-tree test. The witness exceeds the proposed maximizer by at least $3325912/10^6$. |
 | Sandpile | The symbolic Hessian identity holds. Two enumerations agree on 98,708 labeled recurrent states across 17 ordered sizes, with 77 interior coefficient inequalities checked. |
+| Single lamination | All ten symbolic identities and all 62,299 labeled cases passed. The additional Lean 4.36.0 certificate described below checked noncancellation for arbitrary finite update sequences. |
 | Bichromatic 4-candidate | A clean Lean 4.27.0 build reproduced the 24 axiom reports. The headline theorem uses `propext`, `Classical.choice`, and `Quot.sound`. All seven referee tests passed, and line 56 of the authors’ census decodes to the 21-vertex witness. |
 
 ## Graph witnesses
@@ -69,3 +70,13 @@ python3 -m venv .venv &&
 | --- | --- | --- |
 | [Sandpile lacking polynomial](notes/sandpile-lacking/) | Checks the symbolic coefficient identities and compares independent enumerations for 17 ordered choices of the part sizes of a complete bipartite graph. | Symmetric exchange and a Lorentzian polynomial give the coefficient inequality on every connected simple graph with at least two vertices and a sink. |
 | [Single lamination](notes/disk-lamination/) | Checks ten symbolic identities, compares the recurrence with matrix mutation on 62,299 labeled cases, and recomputes the two examples discussed in the note. | A sector invariant excludes nonreal zeros through any sequence of polygon flips along the arc. |
+
+### Lean certificate for the polygon recurrence
+
+The [proof source](notes/disk-lamination/lean/DiskLamination/Certificate.lean) accompanies the revised polygon note. It was added after the revision used for the Python runs. With Elan and Lake available, run:
+
+```sh
+(cd notes/disk-lamination/lean && lake clean && lake build)
+```
+
+In Lean 4.36.0, `positive_real_initial_invariant` initializes the two sector inequalities for positive real-coordinate values. Given this invariant and a parameter with positive imaginary coordinate, `update_noncancellation_certificate` proves that both values stay nonzero and the inequalities persist after any finite sequence of the four update rules. The proof works in pair coordinates over an ordered commutative ring. Its axiom report lists `propext`, `Classical.choice`, and `Quot.sound`. The [written proof](notes/disk-lamination/proof.pdf) identifies the polygon flips with these updates, applies the argument to complex polynomial evaluations, and concludes with Newton’s inequalities.

@@ -14,4 +14,4 @@ Version 4 restricts Conjecture 1 to the disk. The earlier version included annul
 
 With Python and SymPy 1.14.0 installed, run `python3 verify.py` from this directory. The script checks the sector identities, compares the recurrence with extended-matrix mutation on all 62,299 labeled cases for polygons with four through eight vertices, and reproduces the calculations for Examples 4 and 6 in the source.
 
-[Exact checker](verify.py) · [Verification guide](../../VERIFICATION.md#coefficient-inequalities)
+[Exact checker](verify.py) · [Lean proof of noncancellation](lean/DiskLamination/Certificate.lean) · [Build instructions and formal scope](../../VERIFICATION.md#lean-certificate-for-the-polygon-recurrence)
