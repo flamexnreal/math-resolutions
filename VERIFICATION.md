@@ -55,6 +55,19 @@ To check the census witness and exercise the independent referee, run:
 )
 ```
 
+To reproduce the line 56 comparison, download the authors’ census and pass it to the referee. It decodes that line and compares the labeled graph and outer cycle with the 21-vertex witness.
+
+```sh
+(
+  set -e
+  cd notes/bichromatic-candidates
+  census=$(mktemp)
+  trap 'rm -f "$census"' 0
+  curl -fsSL https://lidicky.name/pub/mindeg5/bernard25.log -o "$census"
+  python3 src/referee/verify.py --forbidding --census "$census" witnesses/conjecture30-census-21.json
+)
+```
+
 ## Coefficient inequalities
 
 Both scripts use SymPy 1.14.0. A virtual environment keeps that version local to the checks.
