@@ -1,4 +1,4 @@
-# Open Math
+# Math Resolutions
 
 Six research notes on conjectures in graph theory and algebraic combinatorics. Each note states the claim, gives a proof or an explicit counterexample, and links to its source and computational checks.
 
