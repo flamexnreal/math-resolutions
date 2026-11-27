@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="390" viewBox="-15 -15 280 280" role="img" aria-labelledby="title desc">
+  <title id="title">The 21-vertex census counterexample</title>
+  <desc id="desc">The square boundary is 0, 1, 2, 3 counterclockwise from lower left. All 21 vertices and 56 edges are drawn at the certificate's coordinates. The vertices and edges used in the coloring contradiction are emphasized.</desc>
+  <rect x="-15" y="-15" width="280" height="280" fill="#fff"/>
+  <g fill="none" stroke-linecap="round">
+    <path stroke="#8895a6" stroke-width=".55" d="M125,126L119,130 M125,126L121,124 M125,126L125,122 M125,126L130,123 M125,126L130,132 M119,130L121,124 M119,130L114,121 M119,130L132,160 M119,130L130,132 M119,130L92,117 M121,124L121,120 M121,124L125,122 M121,124L114,121 M121,120L125,122 M121,120L114,121 M121,120L128,117 M121,120L117,116 M125,122L128,117 M125,122L130,123 M114,121L117,116 M114,121L92,117 M128,117L117,116 M128,117L130,123 M128,117L144,120 M128,117L129,102 M117,116L129,102 M117,116L92,117 M132,160L130,132 M130,123L144,120 M130,123L130,132 M144,120L130,132"/>
+    <path stroke="#142539" stroke-width="1.6" d="M0,250L250,250 M0,250L0,0 M250,250L250,0 M250,0L0,0"/>
+    <path stroke="#164e84" stroke-width="1.15" d="M0,250L132,160 M0,250L92,117 M250,250L132,160 M250,250L189,122 M250,0L189,122 M250,0L168,81 M250,0L128,60 M0,0L128,60 M0,0L92,117 M132,160L189,122 M132,160L144,120 M132,160L92,117 M189,122L168,81 M189,122L144,120 M168,81L128,60 M168,81L144,120 M168,81L129,102 M128,60L129,102 M128,60L92,117 M144,120L129,102 M129,102L92,117"/>
+  </g>
+  <g fill="#748193">
+    <circle cx="125" cy="126" r="1"/><circle cx="119" cy="130" r="1"/>
+    <circle cx="121" cy="124" r="1"/><circle cx="121" cy="120" r="1"/>
+    <circle cx="125" cy="122" r="1"/><circle cx="114" cy="121" r="1"/>
+    <circle cx="128" cy="117" r="1"/><circle cx="117" cy="116" r="1"/>
+    <circle cx="130" cy="123" r="1"/><circle cx="130" cy="132" r="1"/>
+  </g>
+  <g fill="#142539">
+    <circle cx="0" cy="250" r="2"/><circle cx="250" cy="250" r="2"/>
+    <circle cx="250" cy="0" r="2"/><circle cx="0" cy="0" r="2"/>
+  </g>
+  <g fill="#164e84">
+    <circle cx="132" cy="160" r="2.1"/><circle cx="189" cy="122" r="2.1"/>
+    <circle cx="168" cy="81" r="2.1"/><circle cx="128" cy="60" r="2.1"/>
+    <circle cx="144" cy="120" r="2.1"/><circle cx="129" cy="102" r="2.1"/>
+    <circle cx="92" cy="117" r="2.1"/>
+  </g>
+  <g fill="#142539" font-family="sans-serif" font-size="8" font-weight="bold">
+    <text x="-8" y="260">0</text><text x="254" y="260">1</text>
+    <text x="254" y="-4">2</text><text x="-8" y="-4">3</text>
+    <text x="127" y="175">12</text><text x="195" y="123">14</text>
+    <text x="174" y="81">15</text><text x="123" y="53">16</text>
+    <text x="148" y="131">17</text><text x="119" y="96">19</text>
+    <text x="76" y="115">20</text>
+  </g>
+</svg>

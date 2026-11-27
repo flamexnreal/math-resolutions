@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\newcommand{\rga}{\operatorname{RGA}^{(2)}}
+
+\title{A double-star counterexample to the\texorpdfstring{\\}{ }TxGraffiti independence bound}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+For a finite simple graph $G$, let $\alpha(G)$ be its independence number and set
+\[
+ d_2(u)=\bigl|\{v\in V(G):\operatorname{dist}_G(u,v)\le 2\}\bigr|,
+ \qquad
+ \rga(G)=\sum_{uv\in E(G)}
+ \frac{2\sqrt{d_2(u)d_2(v)}}{d_2(u)+d_2(v)}.
+\]
+Conjecture~2 in Davila~\cite[\S3.1]{davila} asserts that
+$\alpha(G)\le \rga(G)$ for every nontrivial connected graph.
+
+\begin{proposition}
+There is a tree $T$ on $26$ vertices with
+\[
+ \rga(T)=1+\frac{12\sqrt{91}}5<24=\alpha(T).
+\]
+\end{proposition}
+
+\begin{proof}
+Join two vertices $a$ and $b$ by an edge and attach $12$ leaves to each.
+The $24$ leaves form an independent set. Any independent set containing
+one of the two centers contains at most the $12$ leaves adjacent to the
+other center, besides the chosen center itself. Hence $\alpha(T)=24$.
+
+Each center is within distance two of all $26$ vertices. A leaf is within
+distance two of the $12$ leaves attached to its own center, including
+itself, and of both centers, so its value of $d_2$ is $14$. The center
+edge contributes $1$ to $\rga(T)$, and each of the $24$ other edges
+contributes $2\sqrt{14\cdot26}/40=\sqrt{91}/10$. Therefore
+\[
+ \rga(T)=1+\frac{12\sqrt{91}}5<24,
+\]
+since $12^2\cdot91=13104<13225=115^2$.
+\end{proof}
+
+The same tree works if $d_2(u)$ counts only vertices distinct from $u$.
+The center and leaf counts become $25$ and $13$, respectively. The
+center edge still contributes $1$, while each leaf edge contributes
+$5\sqrt{13}/19<\sqrt{91}/10$, as follows by squaring. Thus the index
+under this convention is smaller still.
+
+\begin{thebibliography}{1}
+\bibitem{davila}
+R. Davila, \emph{Graffiti$^3$: Compact Theory Libraries for Automated
+Mathematical Discovery}, Research Square preprint, 2026.
+\href{https://doi.org/10.21203/rs.3.rs-8493329/v1}{doi:10.21203/rs.3.rs-8493329/v1}.
+\end{thebibliography}
+\end{document}
