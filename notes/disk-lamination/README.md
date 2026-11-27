@@ -6,7 +6,7 @@ For any triangulation of an unpunctured marked disk with a single lamination, th
 
 ## Argument
 
-Cutting the polygon along the lamination gives two colors for the boundary vertices. Follow the target arc through the triangulation. During the run of crossed diagonals with differently colored endpoints, write $A$ and $B$ for the values on the arcs from the starting vertex to the red and blue endpoints, respectively. For $q$ in the upper half-plane, the ratio $B/A$ stays in the sector between the positive real axis and $q$. Its opening angle is less than $\pi$, which rules out cancellation.
+Cut the polygon along the lamination. Color the boundary vertices on the side containing the starting vertex of the target arc red and those on the other side blue. Follow the arc through the triangulation. During the run of crossed diagonals with differently colored endpoints, write $A$ and $B$ for the values on the arcs from the starting vertex to the red and blue endpoints, respectively. For $q$ in the upper half-plane, the ratio $B/A$ stays in the sector between the positive real axis and $q$. Its opening angle is less than $\pi$, which rules out cancellation.
 
 Version 4 restricts Conjecture 1 to the disk. The earlier version included annuli, where counterexamples are known. [Earlier statement](https://arxiv.org/abs/2508.04396v3) · [Annular counterexamples](https://aixiv.online/abs/2611.00002)
 
