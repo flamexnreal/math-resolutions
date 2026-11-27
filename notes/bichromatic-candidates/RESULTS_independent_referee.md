@@ -101,7 +101,7 @@ The apparent conflict is between the census and the printed generation
 claim, not between the census and the witnesses being bichromatic-forbidding.
 
 ```sh
-cd problems/diamond-generation
+cd notes/bichromatic-candidates
 curl -fsSL https://lidicky.name/pub/mindeg5/bernard25.log -o /tmp/bernard25.log
 python3 -m unittest discover -s src/referee -v
 python3 src/referee/verify.py --forbidding --census /tmp/bernard25.log witnesses/conjecture30-*.json
