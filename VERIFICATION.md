@@ -7,8 +7,8 @@ Run the commands below from the repository root. The graph counterexamples have 
 The first three scripts use only the Python standard library. Use Python 3.10 or later for all commands in this guide.
 
 ```sh
-python3 notes/davila-rga/verify_davila.py
-python3 notes/cazenave-spectral/verify_cazenave_2.py
+python3 notes/davila-rga/verify_davila.py &&
+python3 notes/cazenave-spectral/verify_cazenave_2.py &&
 python3 notes/sombor-coindex/verify_sombor.py
 ```
 
@@ -32,6 +32,7 @@ To check the census witness and exercise the independent referee, run:
 
 ```sh
 (
+  set -e
   cd notes/bichromatic-candidates
   python3 src/verify_census21.py witnesses/conjecture30-census-21.json
   python3 -m unittest discover -s src/referee -v
@@ -44,9 +45,9 @@ To check the census witness and exercise the independent referee, run:
 Both scripts use SymPy 1.14.0. A virtual environment keeps that version local to the checks.
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install 'sympy==1.14.0'
-.venv/bin/python notes/sandpile-lacking/verify_lacking.py
+python3 -m venv .venv &&
+.venv/bin/python -m pip install 'sympy==1.14.0' &&
+.venv/bin/python notes/sandpile-lacking/verify_lacking.py &&
 .venv/bin/python notes/disk-lamination/verify.py
 ```
 
