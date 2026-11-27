@@ -9,7 +9,7 @@ Six research notes in graph theory and algebraic combinatorics. Two prove coeffi
 | Conjecture | Result | Proof and checks |
 | --- | --- | --- |
 | [Alofi and Dukes, Conjecture 13](notes/sandpile-lacking/) | The stochastic sandpile lacking polynomial is log-concave for every connected simple graph with a sink. This gives unimodality as well. | [Proof](notes/sandpile-lacking/proof.pdf) · [Symbolic checks and enumerations](notes/sandpile-lacking/verify_lacking.py) |
-| [Kang, Lee and Lim, revised Conjecture 1](notes/disk-lamination/) | For any single lamination on an unpunctured marked disk, the specialized cluster polynomial of every arc has only real negative zeros. Newton’s inequalities give log-concavity. | [Proof](notes/disk-lamination/proof.pdf) · [Exact mutation checks](notes/disk-lamination/verify.py) |
+| [Kang, Lee and Lim, revised Conjecture 1](notes/disk-lamination/) | For any single lamination on an unpunctured marked disk, the specialized cluster polynomial of every arc has only real negative zeros. Newton’s inequalities give log-concavity. | [Proof](notes/disk-lamination/proof.pdf) · [Exact mutation checks](notes/disk-lamination/verify.py) · [Lean recurrence proof](VERIFICATION.md#lean-certificate-for-the-polygon-recurrence) |
 
 ## Graph counterexamples
 

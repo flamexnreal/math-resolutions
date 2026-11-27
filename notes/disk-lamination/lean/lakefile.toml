@@ -1,0 +1,5 @@
+name = "disk_lamination_certificate"
+defaultTargets = ["DiskLamination"]
+
+[[lean_lib]]
+name = "DiskLamination"
