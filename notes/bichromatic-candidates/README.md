@@ -77,3 +77,5 @@ and the two short bridges to the preprint’s conventions. See also the
 [publication and census audit](RESULTS_publication_audit.md), and
 [optional 25- and 37-vertex constructions](RESULTS_alternating_patches.md).
 The proof and certificates come from [the merged work in Open Math Lab](https://github.com/flamexnreal/open_math_lab/pull/2).
+
+[Collection verification guide](../../VERIFICATION.md#bichromatic-forbidding-4-candidate)
