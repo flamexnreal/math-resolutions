@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newtheorem*{thm}{Theorem}
+\newcommand{\cc}{c_{\gamma,T,L}}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\im}{\operatorname{Im}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Real zeros for a single lamination in a polygon}\\[5pt]
+{\large A proof of Kang--Lee--Lim's revised Conjecture 1}\\[4pt]
+Research note \(\cdot\) Devin \(\cdot\) November 26, 2026
+\end{center}
+
+\begin{thm}
+Let \(T\) be any triangulation of an unpunctured marked disk, \(L\) a single lamination, and \(\gamma\) any arc. Set every initial mutable variable to \(1\) and the unique frozen variable to \(q\). The resulting cluster polynomial \(\cc(q)\) has positive constant term and all its zeros are real and negative. In particular its coefficients \(a_0,\ldots,a_d\) satisfy
+\[
+                  a_i^2\ \ge\ a_{i-1}a_{i+1}\qquad (0<i<d).
+\]
+\end{thm}
+
+The coefficient inequality is Conjecture 1 as stated in the authors' November 19 revision [1, v4, \S5.1]. The preceding version allowed more general surfaces. Tang's counterexamples use an annulus [2], as do the related calculations of Til\`epe [3]. A focused search by the conjecture's authors, statement, and surface found no previous resolution of the revised conjecture.
+
+\section*{1. The exchange across one triangle}
+Realize the marked disk as a convex polygon. An allowed single curve joins two different open boundary edges. Its endpoints divide the boundary vertices into two consecutive sets. Color the set containing the starting vertex \(s\) of \(\gamma\) red and the other set blue. A chord crosses \(L\) in minimal position exactly when its endpoints have different colors.
+
+In a quadrilateral flip, the product of the two diagonal variables is the sum of the products on opposite pairs of sides, with coefficients from the shear of \(L\). If the colors split two and two, multiply the product on the two \emph{monochromatic} sides by \(q\). In every other case both coefficients are \(1\).
+
+Here is the sign check using [1, Definitions 2, 9, 11--12 and Figure 3]. Write \(a,b,c,d\) clockwise and flip \(ac\). The positive side pair in the column for \(ac\) is \(bc,da\): each immediately precedes \(ac\) in its clockwise triangle. The negative pair is \(ab,cd\). A curve crossing \(ab,cd\) has shear \(+1\), so \(q\) multiplies \(bc,da\). A curve crossing \(bc,da\) has shear \(-1\), so \(q\) multiplies \(ab,cd\). These are precisely the two possible two-and-two splits. Crossings between adjacent sides and absence of a crossing give zero shear. Boundary sides have value \(1\). Compatibility of shear coordinates with flips permits this calculation in the current triangulation [1, \S2.3], [4].
+
+Follow \(\gamma\) from \(s\), flipping the initial diagonals it crosses in order. At each step \(uv\) is the next such diagonal and \(w\) the third vertex of the triangle beyond it. Flipping \(uv\) creates \(sw\). Indeed, the triangle on the near side is now \(suv\), initially by the choice of starting triangle and thereafter by the preceding flip. The far triangle \(uwv\) is an untouched initial triangle. Thus \(uv,uw,wv\) all have value \(1\) when used, and only the two values on \(su,sv\) need to be carried forward.
+
+\newpage
+\section*{2. The proof for arbitrary polygon size}
+Call \(uv\) the current edge. Its endpoints bound an interval of boundary vertices on the side away from \(s\). If \(w\) is not the target vertex, the next interval is one of \([u,w]\) and \([w,v]\). In the boundary order cut at \(s\), the blue vertices form a single block. There is consequently at most one run of current edges with differently colored endpoints: once such an interval is reached it has two color blocks, and shrinking it to an interval with equal-colored endpoints leaves only one color inside. Before the run, each new value is an ordinary sum. In fact, two red endpoints leave at most one blue among \(s,u,w,v\), and two blue endpoints force \(w\) blue. Both carried values start at \(1\).
+
+During the run let \(A\) denote the value from \(s\) to the red endpoint and \(B\) the value to the blue endpoint. The rule on page 1 gives
+\[
+           c_{sw}(q)=
+           \begin{cases} A+B & w\text{ red},\\ qA+B & w\text{ blue}.\end{cases}                 \tag{1}
+\]
+In the second line the two monochromatic sides are the side carrying \(A\) and the initial side from \(w\) to the blue endpoint. While the endpoints stay mixed, (1) replaces \(A\) or \(B\), respectively. If the run ends by dropping the endpoint of the opposite color, the pair left is either \(A,A+B\) or \(B,B+qA\). Each later update is an ordinary sum since the remaining interval is monochromatic. This description also covers a last flip producing the target directly.
+
+Fix \(z\) in the open upper half-plane, put \(\theta=\arg z\in(0,\pi)\), and evaluate the polynomials at \(q=z\). Write
+\[
+                   K=\{r\ne0:0\le\arg r\le\theta\}.
+\]
+Two members of \(K\) have a nonzero sum in \(K\), since its opening angle is less than \(\pi\). At the beginning of a mixed run both values are positive integers. We claim that throughout it \(A,B\ne0\) and \(r=B/A\in K\).
+\begin{itemize}
+\item On a blue update the new value \(B+zA\) has ratio to \(A\) equal to \(r+z\in K\).
+\item On a red update \(A+B=A(1+r)\ne0\). The new ratio is \(r/(1+r)\). Since the argument of \(1+r\) is between \(0\) and \(\arg r\), this ratio is in \(K\).
+\end{itemize}
+At a red exit the ratio of the two surviving values is \((A+B)/A=1+r\in K\). At a blue exit it is \((B+zA)/B=1+z/r\in K\), since \(0\le\arg(z/r)\le\theta\). The surviving values therefore lie in one rotated sector of opening angle less than \(\pi\). Every subsequent value is a nonzero nonnegative linear combination of the two, and so cannot vanish. If the target is produced during the run, nonvanishing follows directly from (1). A target in the initial triangulation has value \(1\).
+
+Thus \(\cc\) has no zero in the upper half-plane. Its coefficients are real, so conjugation excludes zeros in the lower half-plane. The addition rules give nonnegative integer coefficients and strictly positive constant terms at every step, excluding all nonnegative real zeros. Finally, Newton's inequalities give log-concavity of \(a_i/\binom{d}{i}\) for a degree-\(d\) polynomial with negative real roots. The binomial coefficients are log-concave as well, yielding the asserted inequality for \(a_i\). \hfill\(\square\)
+
+\newpage
+\section*{3. Independent exact checks}
+The accompanying Python program runs with SymPy 1.14 using \texttt{python verify.py}. It checks the algebra of the induction for arbitrary complex inputs and separately recomputes cluster polynomials from exchange matrices.
+
+\textbf{Polynomial certificate.}
+For \(y=\im z>0\), put \(F=\im(B\overline A)\) and \(G=\im(zA\overline B)\). For nonzero \(A,B\), the two inequalities \(F,G\ge0\) say exactly that \(B/A\) is in the sector on page 2. The program expands the following transformations in the six independent real coordinates of \(A,B,z\) over the integers.
+\[
+\begin{array}{c|cc}
+  \text{new pair} & F_{\rm new} & G_{\rm new}\\ \hline
+  (A+B,B)  & F & G+y|B|^2\\
+  (A,B+zA) & F+y|A|^2 & G\\
+  (A,A+B)  & F & G+y|A|^2\\
+  (B,B+zA) & G & |z|^2 F+y|B|^2
+\end{array}
+\]
+All eight differences expand to zero identically. Two more identities check nonvanishing: substituting \(B=-A\) gives \(G=-y|A|^2\), and substituting \(B=-zA\) gives \(F=-y|A|^2\). Thus either proposed cancellation contradicts an old nonnegative form. The first and third rows also certify every ordinary addition after exit.
+
+\textbf{Independent mutation test.}
+For each lamination, start at a fan containing the diagonal whose elementary lamination it is. The initial shear row there is a unit vector [4, Proposition 17.3]. Transport it by integer matrix mutation through the flip graph, checking agreement around cycles and the Catalan count of triangulations. At each resulting triangulation reset the mutable values to \(1\) and compute every target diagonal directly by the extended exchange relation. Compare the full integer coefficient vector with the two-color computation. Exact real-root isolation checks the root claim with multiplicities. All labeled triples passed:
+\[
+\begin{array}{c|rrrrr|r}
+\text{vertices} &4&5&6&7&8&\text{total}\\\hline
+\text{triples} & 8&125&1{,}134&8{,}232&52{,}800&62{,}299 .
+\end{array}
+\]
+
+\textbf{Discrepancies in [1].}
+Direct mutation of the displayed matrix in Example 4 at indices \(1,2,3,4,5\) gives \(1+q,\ 2+q,\ 3+2q,\ 1+4q+2q^2,\ 2+5q+2q^2\). The last polynomial differs from the cubic printed there. In Example 6 the printed coefficients would violate log-concavity since \(6^2<10\cdot4\). Figure 17 itself draws 12 boundary vertices. Number them clockwise from the left endpoint of the blue arc starting at \(0\). Its target is \(07\), and the red curve ends on \(01\) and \(67\). Direct mutation for the drawn triangulation gives \(5+22q+26q^2+8q^3\). The checker includes the diagonal lists for both figures.
+
+\small\raggedright
+\textbf{Sources.}
+[1] W. Kang, K. Lee and E. Lim, \emph{Unimodality and Cluster Algebras from Surfaces}, \href{https://arxiv.org/abs/2508.04396v4}{arXiv:2508.04396v4}. Earlier statement in \href{https://arxiv.org/abs/2508.04396v3}{v3}.
+[2] Q. Tang, \emph{Counterexamples to the Kang--Lee--Lim log-concavity conjecture}, \href{https://aixiv.online/abs/2611.00002}{aiXiv:2611.00002}.
+[3] A. Til\`epe, \emph{Annular Obstructions and Skew-Shape Block Identities}, \href{https://arxiv.org/abs/2611.14506v2}{arXiv:2611.14506v2}.
+[4] S. Fomin and D. Thurston, \emph{Cluster algebras and triangulated surfaces, Part II}, \href{https://doi.org/10.1090/memo/1223}{Mem. Amer. Math. Soc. 255 (2018), no. 1223}.
+\end{document}
